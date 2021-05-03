@@ -1,7 +1,7 @@
 const defaultConfig = {
   osImages: {
     retrieve: {
-      url: 'https://api.jsonbin.io/b/608edf3092cb9267d0c9e4ff',
+      url: 'https://api.jsonbin.io/b/60901d198a409667ca047835',
       method: 'GET',
       headers: {
         accept:
