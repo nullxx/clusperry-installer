@@ -109,7 +109,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Jon Lara - [@https://twitter.com/nullxme](https://twitter.com/https://twitter.com/nullxme) - mail@nullx.me
+Jon Lara - [@nullxme](https://twitter.com/https://twitter.com/nullxme) - mail@nullx.me
 
 Project Link: [https://github.com/nullxx/clusperry-installer](https://github.com/nullxx/clusperry-installer)
 
