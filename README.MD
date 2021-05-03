@@ -1,5 +1,5 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/nullxx/clusperry-installer?style=for-the-badge)
-![GitHub](https://img.shields.io/github/license/nullxx/clusperry-installer?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/nullxx/clusperry-installer?style=for-the-badge&v=2)
 ![GitHub Repo stars](https://img.shields.io/github/stars/nullxx/clusperry-installer?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/nullxx/clusperry-installer?style=for-the-badge)
 
