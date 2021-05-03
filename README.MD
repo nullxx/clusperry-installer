@@ -1,30 +1,30 @@
-![GitHub top language](https://img.shields.io/github/languages/top/nullxx/clusperri-installer?style=for-the-badge)
-![GitHub](https://img.shields.io/github/license/nullxx/clusperri-installer?style=for-the-badge)
-![GitHub Repo stars](https://img.shields.io/github/stars/nullxx/clusperri-installer?style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/nullxx/clusperri-installer?style=for-the-badge)
+![GitHub top language](https://img.shields.io/github/languages/top/nullxx/clusperry-installer?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/nullxx/clusperry-installer?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/nullxx/clusperry-installer?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/nullxx/clusperry-installer?style=for-the-badge)
 
 
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/nullxx/clusperri-installer">
+  <a href="https://github.com/nullxx/clusperry-installer">
     <img src="icon.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Clusperri installer</h3>
+  <h3 align="center">Clusperry installer</h3>
 
   <p align="center">
     A simple tool to generate linux images for raspberry
     <br />
-    <a href="https://github.com/nullxx/clusperri-installer"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/nullxx/clusperry-installer"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/nullxx/clusperri-installer">View Demo</a>
+    <a href="https://sh.nullx.me/clusperry-demo">View Demo</a>
     ·
-    <a href="https://github.com/nullxx/clusperri-installer/issues">Report Bug</a>
+    <a href="https://github.com/nullxx/clusperry-installer/issues">Report Bug</a>
     ·
-    <a href="https://github.com/nullxx/clusperri-installer/issues">Request Feature</a>
+    <a href="https://github.com/nullxx/clusperry-installer/issues">Request Feature</a>
   </p>
 </p>
 
@@ -74,7 +74,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/nullxx/clusperri-installer.git
+   git clone https://github.com/nullxx/clusperry-installer.git
    ```
 2. Install NPM packages
    ```sh
@@ -88,7 +88,7 @@ This is an example of how to list things you need to use the software and how to
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/nullxx/clusperri-installer/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/nullxx/clusperry-installer/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -113,7 +113,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Jon Lara - [@https://twitter.com/nullxme](https://twitter.com/https://twitter.com/nullxme) - mail@nullx.me
 
-Project Link: [https://github.com/nullxx/clusperri-installer](https://github.com/nullxx/clusperri-installer)
+Project Link: [https://github.com/nullxx/clusperry-installer](https://github.com/nullxx/clusperry-installer)
 
 
 

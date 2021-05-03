@@ -1,5 +1,5 @@
 {
-  "name": "clusperri-installer",
+  "name": "clusperry-installer",
   "version": "0.1.0",
   "main": "public/electron.js",
   "homepage": "./",
@@ -64,7 +64,7 @@
     "forge": {
       "packagerConfig": {
         "icon": "public/icons/icon.icns",
-        "name": "Clusperri installer"
+        "name": "Clusperry installer"
       },
       "makers": [
         {
