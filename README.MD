@@ -116,7 +116,6 @@ Jon Lara - [@https://twitter.com/nullxme](https://twitter.com/https://twitter.co
 Project Link: [https://github.com/nullxx/clusperry-installer](https://github.com/nullxx/clusperry-installer)
 
 
-
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
