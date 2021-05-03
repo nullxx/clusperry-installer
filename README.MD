@@ -15,7 +15,7 @@
   <h3 align="center">Clusperry installer</h3>
 
   <p align="center">
-    A simple tool to generate linux images for raspberry
+    A simple tool to generate linux images for your raspberry cluster
     <br />
     <a href="https://github.com/nullxx/clusperry-installer"><strong>Explore the docs »</strong></a>
     <br />
@@ -49,7 +49,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A simple tool to generate linux images for raspberry
+A simple tool to generate linux images for your raspberry cluster
 
 ### Built With
 
