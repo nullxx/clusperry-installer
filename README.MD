@@ -8,8 +8,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="icon.png">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/nullxx/clusperri-installer">
+    <img src="icon.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Clusperri installer</h3>
