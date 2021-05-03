@@ -111,7 +111,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@https://twitter.com/nullxme](https://twitter.com/https://twitter.com/nullxme) - mail@nullx.me
+Jon Lara - [@https://twitter.com/nullxme](https://twitter.com/https://twitter.com/nullxme) - mail@nullx.me
 
 Project Link: [https://github.com/nullxx/clusperri-installer](https://github.com/nullxx/clusperri-installer)
 
