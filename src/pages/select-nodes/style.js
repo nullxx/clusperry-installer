@@ -8,7 +8,6 @@ const styles = {
         marginTop: 8,
         borderRadius: 10,
         shadowColor: '#000',
-        // shadowColor: "#000",
         shadowOffset: {
             width: 0,
             height: 2,

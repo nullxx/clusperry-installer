@@ -1,5 +1,5 @@
-import { Button, Progress, Tag, message } from 'antd';
-import { CheckCircleTwoTone, FolderOpenTwoTone, LoadingOutlined } from '@ant-design/icons';
+import { Button, Progress, Spin, Tag, message } from 'antd';
+import { CheckCircleTwoTone, FolderOpenTwoTone } from '@ant-design/icons';
 
 import React from 'react';
 import styles from './style';
@@ -11,7 +11,7 @@ const Downloader = window.require('nodejs-file-downloader');
 const path = window.require('path');
 const os = window.require('os');
 
-const DownloadOS = () => {
+const DownloadOS = ({ canContinue, data, setData }) => {
     const [uniqueOSURLs, setUniqueOSURLs] = React.useState([]);
     const [uniqueOSNames, setUniqueOSNames] = React.useState([]);
     const [percentajes, setPercentajes] = React.useState([]);
@@ -19,6 +19,11 @@ const DownloadOS = () => {
     const [failed, setFailed] = React.useState([]);
     const [errors, setErrors] = React.useState([]);
 
+    React.useEffect(() => {
+        setData({ ...data, decompressing });
+        canContinue(decompressing.map(d => typeof d !== 'undefined').length === uniqueOSURLs.length);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [decompressing, uniqueOSURLs.length]);
     const createDownload = async (download, filePath, i) => {
         try {
             failed[i] = undefined;
@@ -38,7 +43,7 @@ const DownloadOS = () => {
 
             compressor.on('finish', () => {
                 console.log('Finished uncompression', i, targetFilePath);
-                decompressing[i] = targetFilePath;
+                decompressing[i] = { targetFilePath, url: download.config.url };
                 setDecompressing(Object.create(decompressing));
             });
 
@@ -65,7 +70,7 @@ const DownloadOS = () => {
         const processinguniqueOSURLs = [];
         const processingUniqueOSNames = [];
 
-        window.selectNodes.forEach((node) => {
+        data.selectNodes.forEach((node) => {
             const dlURL = node.os[node.os.length - 1];
             if (processinguniqueOSURLs.indexOf(dlURL) === -1) {
                 processinguniqueOSURLs.push(dlURL);
@@ -113,11 +118,11 @@ const DownloadOS = () => {
                     />
                     {parseFloat(percentajes[i]) === 100 && (
                         <div style={styles.decompress}>
-                            {!decompressing[i] ? <LoadingOutlined style={{ fontSize: 24 }} spin={!decompressing[i]} /> : <CheckCircleTwoTone />}
+                            {!decompressing[i] ? <Spin /> : <CheckCircleTwoTone />}
                             <div style={styles.separatorRow} />
                             <p>{!decompressing[i] ? 'Decompressing...' : 'Decompresion completed'}</p>
                             <div style={styles.separatorRow} />
-                            {decompressing[i] && <Button icon={<FolderOpenTwoTone />} size='small' onClick={() => shell.showItemInFolder(path.resolve(decompressing[i]))} />}
+                            {decompressing[i] && <Button icon={<FolderOpenTwoTone />} size='small' onClick={() => shell.showItemInFolder(path.resolve(decompressing[i].targetFilePath))} />}
                         </div>
                     )}
                 </div>

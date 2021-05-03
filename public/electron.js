@@ -1,7 +1,8 @@
 const path = require('path');
 
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const isDev = require('electron-is-dev');
+const { mountImage, unmountImage, ejectImage } = require('../src/lib/utils');
 
 let installExtension, REACT_DEVELOPER_TOOLS;
 
@@ -57,4 +58,26 @@ app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   }
+});
+
+ipcMain.handle('openImage', async (event, ...args) => {
+  console.log('openImage', args);
+  const result = await mountImage(args);
+  return result;
+});
+
+ipcMain.handle('closeImage', async (event, ...args) => {
+  console.log('closeImage', args);
+  const result = await unmountImage(args);
+  return result;
+});
+
+ipcMain.handle('ejectImage', async (event, ...args) => {
+  console.log('ejectImage', args);
+  const result = await ejectImage(args);
+  return result;
+});
+
+ipcMain.on('quit', () => {
+  app.quit();
 });

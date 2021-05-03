@@ -5,7 +5,8 @@ const retrieveOSImages = async() => {
 
   const response = await fetch(url, { method, headers });
   const data = await response.json();
-  return data;
+  return data; 
 };
 
-module.exports.retrieveOSImages = retrieveOSImages;
+export { retrieveOSImages };
+

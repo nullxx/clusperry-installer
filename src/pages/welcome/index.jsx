@@ -6,8 +6,13 @@ import steps from './steps';
 import styles from './style.js';
 
 const { Step } = Steps;
+const { ipcRenderer } = window.require('electron');
+
 const App = () => {
   const [current, setCurrent] = React.useState(0);
+  const [nextDisabled, setNextDisabled] = React.useState(false);
+  const [backDisabled, setBackDisabled] = React.useState(false);
+  const [data, setData] = React.useState({});
 
   const next = async () => {
     setCurrent(current + 1);
@@ -28,28 +33,28 @@ const App = () => {
       <div
         style={styles.stepContent}
       >
-        <StepContent />
+        <StepContent canContinue={(c) => setNextDisabled(!c)} canGoBack={(c) => setBackDisabled(!c)} data={data} setData={setData} />
       </div>
       <div style={styles.stickyFooter}>
       {current > 0 && (
-          <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
+          <Button style={{ margin: '0 8px' }} onClick={() => prev()} disabled={backDisabled}>
             <LeftCircleTwoTone />
             Previous
           </Button>
         )}
 
         {current < steps.length - 1 && (
-          <Button type="primary" onClick={() => next()} disabled={window.allowNext}>
+          <Button type="primary" onClick={() => next()} disabled={nextDisabled}>
             Next
             <RightCircleTwoTone />
           </Button>
         )}
 
-        {/* {current === steps.length - 1 && (
-          <Button type="primary" onClick={() => message.success('Processing complete!')}>
-            Done
+        {current === steps.length - 1 && (
+          <Button type="primary" onClick={() => ipcRenderer.send('quit')}>
+            Close
           </Button>
-        )} */}
+        )}
       </div>
     </div>
   );

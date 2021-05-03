@@ -7,18 +7,38 @@ import styles from '../select-nodes/style';
 
 const { Panel } = Collapse;
 
-const ConfigNode = ({ node }) => {
+const ConfigNode = ({ node, data, setData, canContinue }) => {
     const [userData, setUserData] = React.useState(cloudConfigTemplates.userData.replace('<HOSTNAME>', `node-${node.index.toString().padStart(2, '0')}`));
     const [networkConfig, setNetworkConfig] = React.useState(cloudConfigTemplates.networkConfig.replace('192.168.1.100', ip.fromLong(ip.toLong('192.168.1.100')+node.index-1)));
 
 
     React.useEffect(() => {
-        window.configuration = { ...window.configuration, userData };
+        if (!Array.isArray(data.configNodes)) {
+            data.configNodes = [];
+        }
+
+        data.configNodes[node.index-1] = { ...data.configNodes[node.index-1], userData, node };
+        setData(data);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userData]);
 
     React.useEffect(() => {
-        window.configuration = { ...window.configuration, networkConfig };
+
+        if (!Array.isArray(data.configNodes)) {
+            data.configNodes = [];
+        }
+
+        data.configNodes[node.index-1] = { ...data.configNodes[node.index-1], networkConfig, node };
+        setData(data);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [networkConfig]);
+
+
+    React.useEffect(() => {
+       canContinue(data.configNodes && data.configNodes.filter(cn => typeof cn !== 'undefined').length === data.selectNodes.length);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [networkConfig, userData]);
 
     return (
         <div style={styles.container}>
@@ -52,14 +72,15 @@ const ConfigNode = ({ node }) => {
 };
 
 
-const ConfigNodes = ({ nodes = window.selectNodes }) => {
+const ConfigNodes = ({ data, setData, canContinue }) => {
+    const nodes = data.selectNodes;
+
     return nodes.map((node, i) => (
         <Collapse bordered={false} defaultActiveKey={['0']} key={i}>
             <Panel header={`Node #${node.index}`} key={i}>
-                <ConfigNode node={node} key={i} />
+                <ConfigNode node={node} key={i} data={data} setData={setData} canContinue={canContinue}/>
             </Panel>
         </Collapse>
     ))
 }
 export default ConfigNodes;
-
