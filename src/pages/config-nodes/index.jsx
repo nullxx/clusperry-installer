@@ -46,10 +46,10 @@ const ConfigNode = ({ node, data, setData, canContinue }) => {
                 <h2>cloud-config (user-data)</h2>
                 <MonacoEditor
                     language="yaml"
-                    value={userData}
                     onChange={(v) => setUserData(v)}
                     options={{
                         theme: 'vs-dark',
+                        value: userData
                     }}
                     height="250px"
                 />
@@ -59,10 +59,11 @@ const ConfigNode = ({ node, data, setData, canContinue }) => {
                 <h2>cloud-config (network-config)</h2>
                 <MonacoEditor
                     language="yaml"
-                    value={networkConfig}
+                    
                     onChange={(v) => setNetworkConfig(v)}
                     options={{
                         theme: 'vs-dark',
+                        value: networkConfig
                     }}
                     height="250px"
                 />
