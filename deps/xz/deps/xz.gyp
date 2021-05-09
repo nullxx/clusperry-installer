@@ -40,7 +40,7 @@
           'outputs': [
             '<(SHARED_INTERMEDIATE_DIR)/xz-<@(xz_version)/src/liblzma/.libs/liblzma.a'
           ],
-          'action': [ 'sh', '-c \'cd <(SHARED_INTERMEDIATE_DIR)/xz-<@(xz_version) && ./configure && make\'' ]
+          'action': [ 'sh', '-c', 'mkdir -p <(SHARED_INTERMEDIATE_DIR)/xz-<@(xz_version) && cd <(SHARED_INTERMEDIATE_DIR)/xz-<@(xz_version) && ./configure && make' ]
         }
       ],
       'export_dependent_settings': [
