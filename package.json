@@ -25,6 +25,7 @@
     "xz": "^2.0.2"
   },
   "scripts": {
+    "postinstall": "npx patch-package",
     "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
     "electron": "wait-on tcp:3000 && electron-forge start",
     "start": "react-scripts start",

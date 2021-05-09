@@ -1,0 +1,13 @@
+diff --git a/node_modules/xz/deps/xz.gyp b/node_modules/xz/deps/xz.gyp
+index bc2cd61..d7f19e5 100755
+--- a/node_modules/xz/deps/xz.gyp
++++ b/node_modules/xz/deps/xz.gyp
+@@ -40,7 +40,7 @@
+           'outputs': [
+             '<(SHARED_INTERMEDIATE_DIR)/xz-<@(xz_version)/src/liblzma/.libs/liblzma.a'
+           ],
+-          'action': [ 'eval', 'cd <(SHARED_INTERMEDIATE_DIR)/xz-<@(xz_version) && env CFLAGS="-fPIC" ./configure && make' ]
++          'action': [ 'sh', '-c', 'eval', 'cd <(SHARED_INTERMEDIATE_DIR)/xz-<@(xz_version) && env CFLAGS="-fPIC" ./configure && make' ]
+         }
+       ],
+       'export_dependent_settings': [
