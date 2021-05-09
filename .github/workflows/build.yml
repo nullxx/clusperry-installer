@@ -18,8 +18,9 @@ jobs:
         with:
           node-version: 10
 
-     - if: matrix.os == 'windows-latest'
-          run: |
+      - name: Install windows dependencies
+        if: matrix.os == 'windows-latest'
+        run: |
             npm install --global --production windows-build-tools --vs2015
             npm config set msvs_version 2015 –global
             npm config set python python2.7
