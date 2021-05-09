@@ -1,6 +1,6 @@
 {
   "name": "clusperry-installer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "public/electron.js",
   "homepage": "./",
   "private": true,
