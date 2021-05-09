@@ -21,7 +21,7 @@ jobs:
       - name: Install windows dependencies
         if: matrix.os == 'windows-latest'
         run: |
-            npm i -g windows-build-tools --production
+            npm install --global --production windows-build-tools@4.0.0
 
       - name: Install yarn
         run: npm install -g yarn
