@@ -18,14 +18,11 @@ jobs:
         with:
           node-version: 10
 
-      - name: windows-build-tools
-        run: npm install --global --production windows-build-tools --vs2015
-
-      - name: Set msvs_version
-        run: npm config set msvs_version 2015 –global
-
-      - name: Set python version
-        run: npm config set python python2.7
+     - if: matrix.os == 'windows-latest'
+          run: |
+            npm install --global --production windows-build-tools --vs2015
+            npm config set msvs_version 2015 –global
+            npm config set python python2.7
 
       - name: Install yarn
         run: npm install -g yarn
