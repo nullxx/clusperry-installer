@@ -5,6 +5,7 @@
   "homepage": "./",
   "private": true,
   "dependencies": {
+    "@electron-forge/publisher-github": "^6.0.0-beta.54",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -30,8 +31,9 @@
     "build": "cross-env GENERATE_SOURCEMAP=false NODE_OPTIONS=--max_old_space_size=4036 react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "package": "react-scripts build && electron-forge package",
-    "make": "react-scripts build && electron-forge make"
+    "package": "yarn run build && electron-forge package",
+    "make": "yarn run build && electron-forge make",
+    "publish": "electron-forge publish"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -96,6 +98,18 @@
         {
           "name": "@electron-forge/maker-rpm",
           "config": {}
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "nullxx",
+              "name": "clusperry-installer"
+            },
+            "draft": true
+          }
         }
       ]
     }
